@@ -1,0 +1,81 @@
+\documentclass[12pt,a4paper,titlepage]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{changepage} 
+\usepackage{systeme}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage[margin=1in]{geometry}
+
+\newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\title{Math 360 - Project 1: Symbiosis (Mutualism)}
+\author{Ethan Rahman}
+
+\begin{document}
+	\maketitle
+	\pagebreak
+	\section*{Problem 1}
+		Honey bees and clover plants have a symbiotic relationship that is mutually beneficial. The assigned problem attempts to model this relationship using a non-linear dynamical system. The model variables are defined in table 1 below.
+	
+		\begin{table}[ht]
+			\centering
+			\begin{tabular}{ccccc}
+				\toprule
+				Variable & Description \\ 
+				\midrule 
+				\(n\) & Number of years since 1990 \\ 
+				\(X_{n}\) & Population of bees at year \(n\) \\
+				\(Y_{n}\) & Population of clover plants at year \(n\) \\ 
+				\(\Delta X_{n}\) & Net change in bee population during year \(n\) \\
+				\(\Delta Y_{n}\) & Net change in clover plant population during year \(n\)   \\ 
+				\(a\) & Proportionality constant for death rate of bees \\ 
+				\(b\) & Proportionality constant for birth rate of bees  \\ 
+				\(c\) & Proportionality constant for death rate of clover plants  \\ 
+				\(d\) & Proportionality constant for birth rate of bees  \\ 
+				\bottomrule
+			\end{tabular}
+			\caption{Definition of all variables used in this paper.}
+		\end{table}
+		The exact model is essentially the sum of two terms for each population. The first term in both models can be thought of as the death rate function: \(-aX_{n}\) for bees and \(-cY_{n}\) for clovers. More organism will die just by random chance or aging even the population of that organism is higher. The parameters \(a\) and \(c\) represent proportionality constants for the death function in both populations. And because they decrease the population, the sign of the terms are negative. Because bees and clovers have a mutually beneficial relationship we wouldn't expect there to be any interaction effects here. \\
+		
+		The second term is the birth rate function: \(bX_{n}Y_{n}\) for bees and \(dX_{n}Y_{n}\) for clover plants. Here is where the interaction effects become relevant. Bees benefit from having a higher population of clover plants because they can use feed on more of their nectar. Simultaneously, clover plants benefit from having a higher population of bees because there is a greater chance each bee will spread more pollen. \(b\) and \(d\) represent proportionality constants for the birth function in both populations. \\
+		
+		Put together, the model is simply the sum of the death rate function and the birth rate function for each population: 
+		\[\Delta X_{n} = -aX_{n} + b X_{n}Y_{n}\]
+		\[\Delta Y_{n} = -cY_{n} + d X_{n}Y_{n}\]
+
+	\section*{Problem 2}
+		For the next section, we're looking at the model when the parameters in table 2 are specified along with the initial points \(X_{0} = 200\) and \(Y_{0} = 300\). 
+		\begin{table}[ht]
+			\centering
+			\begin{tabular}{cl}
+				\toprule
+				Parameter & Value \\ 
+				\midrule 
+				\(a\) & 0.2\\ 
+				\(b\) & 0.001 \\
+				\(c\) & 0.3  \\ 
+				\(d\) & 0.002  \\ 
+				\bottomrule
+			\end{tabular}
+			\caption{Set of values for each parameter}
+		\end{table}
+		The results of the model are recorded in table \ref{tab:p1}. For the year 1998, the population of bees is 7,475 while the population of clovers is 14,360. The population of both organisms quickly grows and becomes too large to calculate using Python by the year 2007! So we are unable to provide an answer for the population in the year 2008 but the long run behavior of the model using this set of parameters is clear. The population quickly becomes infinitely large.
+		\begin{table} 
+			\centering
+			\input{problem1_tab.tex}
+			\caption{The model values calculated using a Python script. An overflow error is thrown by the year 2006 for \(\Delta X\) and \(\Delta Y\).}
+			\label{tab:p1}
+		\end{table}
+	\section*{Problem 3}
+	
+	
+		
+\end{document}
