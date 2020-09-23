@@ -66,16 +66,23 @@
 				\bottomrule
 			\end{tabular}
 			\caption{Set of values for each parameter}
+			\label{params1}
 		\end{table}
-		The results of the model are recorded in table \ref{tab:p1}. For the year 1998, the population of bees is 7,475 while the population of clovers is 14,360. The population of both organisms quickly grows and becomes too large to calculate using Python by the year 2007! So we are unable to provide an answer for the population in the year 2008 but the long run behavior of the model using this set of parameters is clear. The population quickly becomes infinitely large.
+		The results of the model are recorded in table \ref{tab:p1}. For the year 1998, the population of bees is 7,475 while the population of clovers is 14,360. The population of both organisms quickly grows and becomes too large to calculate using Python by the year 2007! So we are unable to provide an answer for the population in the year 2008 but the long run behavior of the model using this set of parameters is clear. The population becomes infinitely large without reaching an equilibrium. 
 		\begin{table} 
 			\centering
-			\input{problem1_tab.tex}
+			\input{problem2_tab.tex}
 			\caption{The model values calculated using a Python script. An overflow error is thrown by the year 2006 for \(\Delta X\) and \(\Delta Y\).}
 			\label{tab:p1}
 		\end{table}
 	\section*{Problem 3}
-	
+		For problem 3 we use the same parameters in table \ref{params1} but with initial values \(X_{0} = 100\) and \(Y_{0} = 150\). For these initial values the results are much more amenable to a visual representation.  
+	\begin{table} 
+		\centering
+		\input{problem3_tab.tex}
+		\caption{pee pee poo poo.}
+		\label{tab:p2}
+	\end{table}
 	
 		
 \end{document}
