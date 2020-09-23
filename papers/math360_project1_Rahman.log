@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2020.8.24)  20 SEP 2020 22:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2020.8.24)  22 SEP 2020 20:59
 entering extended mode
 **./math360_project1_Rahman.tex
 (math360_project1_Rahman.tex
@@ -316,28 +316,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 48--49
 
  []
 
-(problem2_tab.tex) [1] (problem3_tab.tex) [2] [3] (math360_project1_Rahman.aux)
- ) 
+(problem2_tab.tex) [1] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 83--85
+
+ []
+
+<charts/problem3_chart.png, id=20, 803.0pt x 803.0pt>
+File: charts/problem3_chart.png Graphic file (type png)
+<use charts/problem3_chart.png>
+Package pdftex.def Info: charts/problem3_chart.png  used on input line 87.
+(pdftex.def)             Requested size: 401.49902pt x 401.49902pt.
+[3 <./charts/problem3_chart.png>] (problem3_tab.tex) [4]
+(math360_project1_Rahman.aux) ) 
 Here is how much of TeX's memory you used:
- 3751 strings out of 492945
- 51671 string characters out of 3135513
- 134701 words of memory out of 3000000
- 7592 multiletter control sequences out of 15000+200000
+ 3759 strings out of 492945
+ 51827 string characters out of 3135513
+ 133709 words of memory out of 3000000
+ 7597 multiletter control sequences out of 15000+200000
  14733 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,9n,35p,653b,217s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
-ecrm1200.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/
-ec/dpi600\ecbx1728.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour
-/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts
-/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on math360_project1_Rahman.pdf (4 pages, 88834 bytes).
+ 27i,9n,35p,653b,222s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/
+pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\ethan\AppData\Local\MiKTeX\
+2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\ethan\AppData\Loc
+al\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\ethan\A
+ppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Prog
+ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmsy10.pfb>
+Output written on math360_project1_Rahman.pdf (5 pages, 209937 bytes).
 PDF statistics:
- 159 PDF objects out of 1000 (max. 8388607)
+ 168 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

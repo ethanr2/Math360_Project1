@@ -59,9 +59,11 @@ def trial(
     t = 1
     equilibrium = False
     if display:
-        print("{:10} {:10} {:10} {:10} {:10}".format(
-                            'Year', 'X_next', 'dX_next', 'Y_next', 'dY_next'
-                        ))
+        print(
+            "{:10} {:10} {:10} {:10} {:10}".format(
+                "Year", "X_next", "dX_next", "Y_next", "dY_next"
+            )
+        )
     while iterate:
         # print(X[-1],dX )
         X_next = X[-1] + dX[-1]
@@ -255,8 +257,8 @@ def phase_space(x_0=100, y_0=200):
     return p
 
 
-def vector_field(name,size=20, proportion = 1,n = 20, X_max=550, Y_max=550):
-    df = make_matrix(n, X_max, Y_max) 
+def vector_field(name, size=20, proportion=1, n=20, X_max=550, Y_max=550):
+    df = make_matrix(n, X_max, Y_max)
     df["X_1"] = df["X_0"] + df["dX_0"] / df["vector_color"] * size
     df["Y_1"] = df["Y_0"] + df["dY_0"] / df["vector_color"] * size
     source = ColumnDataSource(df)
@@ -266,8 +268,8 @@ def vector_field(name,size=20, proportion = 1,n = 20, X_max=550, Y_max=550):
         title="Vector Field",
         x_axis_label="X",
         y_axis_label="Y",
-        y_range=(0, X_max-50),
-        x_range=(0, Y_max-50),
+        y_range=(0, X_max - 50),
+        x_range=(0, Y_max - 50),
     )
 
     mapper = LinearColorMapper(
@@ -277,12 +279,12 @@ def vector_field(name,size=20, proportion = 1,n = 20, X_max=550, Y_max=550):
 
     p.add_layout(
         Arrow(
-            end=NormalHead(line_color=None, size=2/proportion),
+            end=NormalHead(line_color=None, size=2 / proportion),
             x_start="X_0",
             y_start="Y_0",
             x_end="X_1",
             y_end="Y_1",
-            line_width = 1/proportion,
+            line_width=1 / proportion,
             source=source,
             line_color=colors,
         )
@@ -291,74 +293,93 @@ def vector_field(name,size=20, proportion = 1,n = 20, X_max=550, Y_max=550):
     p.xaxis[0].ticker.desired_num_ticks = 10
     p.xgrid.grid_line_color = None
     p.ygrid.grid_line_color = None
-    p.background_fill_color = '#4A4A4A'
-    
+    p.background_fill_color = "#4A4A4A"
 
     return p
 
-def add_path(p, path, proportion = 1):
+
+def add_path(p, path, proportion=1):
     path["X_1"] = path["X"] + path["dX"]
     path["Y_1"] = path["Y"] + path["dY"]
-    p.line(x= path.iloc[:-1,0], y= path.iloc[:-1,1], line_color = 'white', line_width = 2/proportion)
-    
-    last = path.iloc[-2,:]
+    p.line(
+        x=path.iloc[:-1, 0],
+        y=path.iloc[:-1, 1],
+        line_color="white",
+        line_width=2 / proportion,
+    )
+
+    last = path.iloc[-2, :]
     p.add_layout(
         Arrow(
-            end=NormalHead(line_color = None,fill_color="white", size=4/proportion),
-            x_start=last['X'],
+            end=NormalHead(line_color=None, fill_color="white", size=4 / proportion),
+            x_start=last["X"],
             y_start=last["Y"],
             x_end=last["X_1"],
             y_end=last["Y_1"],
-            line_width = 2/proportion,
-            line_color='#FFFFFF'
+            line_width=2 / proportion,
+            line_color="#FFFFFF",
         )
-        )
+    )
     return p
-   
-    
+
 
 # Problem 2
-print('Problem 2')
-p1 = trial(
+print("Problem 2")
+p2 = trial(
     200, 300, display=True, num_iter=18, pop_exit=False, shock=False, make_t=False
 )
-p1.to_latex(
+p2.to_latex(
     "papers/problem2_tab.tex",
     header=["\(X\)", "\(Y\)", "\(\Delta X\)", "\(\Delta Y\)"],
     escape=False,
-    float_format="{:0.3e}".format
+    float_format="{:0.3e}".format,
 )
 
 # Problem 2
-print('\nProblem 3')
-p2 = trial(100,150, display = True, num_iter = 18, pop_exit = False, shock = False, make_t=False)
-p2.to_latex(
+print("\nProblem 3")
+p3 = trial(
+    100, 150, display=True, num_iter=18, pop_exit=False, shock=False, make_t=False
+)
+p3.to_latex(
     "papers/problem3_tab.tex",
     header=["\(X\)", "\(Y\)", "\(\Delta X\)", "\(\Delta Y\)"],
     escape=False,
-    float_format="{:0.2f}".format
+    float_format="{:0.2f}".format,
 )
-fig1 = vector_field('problem3', proportion= 2/3, n = 20, X_max = 350, Y_max = 350)
+fig1 = vector_field("problem3", proportion=2 / 3, n=20, X_max=350, Y_max=350)
 
-path1 = p2.loc[:1998,:]
-fig1 = add_path(fig1, path1, 2/3)
+path1 = p3.loc[:1998, :]
+fig1 = add_path(fig1, path1, 2 / 3)
 
-path2 = p2.loc[1998:2008,:]
-fig1 = add_path(fig1, path2, 2/3)
+path2 = p3.loc[1998:2008, :]
+fig1 = add_path(fig1, path2, 2 / 3)
 
-label_path=p2.loc[[1990, 1998, 2008], :]
-label_path['x_offset'] = [0,5,0]
-label_path['y_offset'] = [0,0,10]
+label_path = p3.loc[[1990, 1998, 2008], :]
+label_path["x_offset"] = [0, 10, 0]
+label_path["y_offset"] = [0, -5, 30]
 label_path = ColumnDataSource(label_path)
-lbs = LabelSet(x='X', y= 'Y', x_offset = 'x_offset', y_offset='y_offset', text = 'Year', source = label_path, 
-               text_font_size = '15px', text_color = 'white' )
+
+fig1.circle(
+    x="X", y="Y", size=8, line_color="white", fill_color="White", source=label_path
+)
+
+lbs = LabelSet(
+    x="X",
+    y="Y",
+    x_offset="x_offset",
+    y_offset="y_offset",
+    text="Year",
+    source=label_path,
+    text_font_size="15px",
+    text_color="white",
+)
 fig1.add_layout(lbs)
 show(fig1)
-export_png(fig1, filename="imgs/problem3_chart.png")
+export_png(fig1, filename="papers/charts/problem3_chart.png")
 
 #%%
 
-#fig1 = vector_field('problem3_img',proportion= 1, n = 35, X_max = 550, Y_max = 550)
+# fig1 = vector_field('problem3_img',proportion= 1, n = 35, X_max = 550, Y_max = 550)
 
 # df = make_matrix(500, 500, 500)
 # f = make_matrix(25, 500, 500)

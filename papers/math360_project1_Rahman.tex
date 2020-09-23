@@ -68,21 +68,35 @@
 			\caption{Set of values for each parameter}
 			\label{params1}
 		\end{table}
-		The results of the model are recorded in table \ref{tab:p1}. For the year 1998, the population of bees is 7,475 while the population of clovers is 14,360. The population of both organisms quickly grows and becomes too large to calculate using Python by the year 2007! So we are unable to provide an answer for the population in the year 2008 but the long run behavior of the model using this set of parameters is clear. The population becomes infinitely large without reaching an equilibrium. 
+		The results of the model are recorded in table \ref{tab:p2}. For the year 1998, the population of bees is 7,475 while the population of clovers is 14,360. The population of both organisms quickly grows and becomes too large to calculate using Python by the year 2007! So we are unable to provide an answer for the population in the year 2008 but the long run behavior of the model using this set of parameters is clear. The population becomes infinitely large without reaching an equilibrium. 
 		\begin{table} 
 			\centering
 			\input{problem2_tab.tex}
 			\caption{The model values calculated using a Python script. An overflow error is thrown by the year 2006 for \(\Delta X\) and \(\Delta Y\).}
-			\label{tab:p1}
+			\label{tab:p2}
 		\end{table}
 	\section*{Problem 3}
-		For problem 3 we use the same parameters in table \ref{params1} but with initial values \(X_{0} = 100\) and \(Y_{0} = 150\). For these initial values the results are much more amenable to a visual representation.  
-	\begin{table} 
-		\centering
-		\input{problem3_tab.tex}
-		\caption{pee pee poo poo.}
-		\label{tab:p2}
-	\end{table}
-	
+		For problem 3 we use the same parameters in table \ref{params1} but with initial values \(X_{0} = 100\) and \(Y_{0} = 150\). The results here are much more amenable to a visual representation. Figure \ref{fig:p3} depicts the model as a vector field with the specific path taken by the populations when they start at the given initial values.\\ 
+		In 1998, the population of bees declines to 50 and the population of clovers is 52. By 2008 there are only 6 bees and 2 clovers. More specific values for the evolution of the population model are given in table \ref{tab:p3}. Over time it appears that both organisms go extinct. \\
+		The model does not result in the populations being cut in half from the populations in table \ref{tab:p2} from problem 2. This is because the model is defined by non-linear difference equations. To illustrate this, set \(X_{n} = 2X_{n}\) and \(Y_{n} = 2Y_{n}\) in the birth functions for bees and clovers:
+		\[X_{Birth} = b (2X_{n})(2Y_{n}) = 4bX_{n}Y_{n}\]
+		\[Y_{Birth} = d (2X_{n})(2Y_{n}) = 4dX_{n}Y_{n}\]
+		As you can see,  doubling the populations results in the birth rate increasing by a factor of 4 for both populations! That is, the birth function has increasing returns to scale and is non-linear. \\
+		
+		\begin{figure}[htbp]
+			\centerline{\includegraphics[scale=.5]{charts/problem3_chart.png}}
+			\caption{The model is represented as a vector field. The lengths of each vector are kept the same, but the color of each vector is determined by the magnitude of the vector at that point. Light yellow vectors have the lowest magnitude and dark purple vectors have the largest. The white shows the evolution of the populations when the initial conditions are \(X_{0} = 100\) and \(Y_{0} = 150\) are chosen.}
+			\label{fig:p3}
+		\end{figure}
+		At the same time, the death functions have constant returns to scale:
+		\[X_{Death} = -a (2X_{n}) = -2aX_{n}\]
+		\[Y_{Death} = -c (2Y_{n}) = -2cY_{n}\]
+		\begin{table} 
+			\centering
+			\input{problem3_tab.tex}
+			\caption{The model evolution for the initial conditions \(X_{0} = 100\) and \(Y_{0} = 150\) given the parameters in table \ref{params1}.}
+			\label{tab:p3}
+		\end{table}
+
 		
 \end{document}
