@@ -64,6 +64,8 @@ def trial(
                 "Year", "X_next", "dX_next", "Y_next", "dY_next"
             )
         )
+
+        
     while iterate:
         # print(X[-1],dX )
         X_next = X[-1] + dX[-1]
@@ -114,7 +116,7 @@ def trial(
     return data
 
 
-def make_matrix(n, X_max=300, Y_max=300):
+def make_matrix(n, X_max=550, Y_max=550):
     x_noughts = []
     dx_noughts = []
     X = []
@@ -322,63 +324,80 @@ def add_path(p, path, proportion=1):
     )
     return p
 
+def main():
+    # Problem 2
+    print("Problem 2")
+    p2 = trial(
+        200, 300, display=True, num_iter=18, pop_exit=False, shock=False, make_t=False
+    )
+    p2.to_latex(
+        "papers/problem2_tab.tex",
+        header=["\(X\)", "\(Y\)", "\(\Delta X\)", "\(\Delta Y\)"],
+        escape=False,
+        float_format="{:0.3e}".format,
+    )
+    
+    # Problem 3
+    print("\nProblem 3")
+    p3 = trial(
+        100, 150, display=True, num_iter=18, pop_exit=False, shock=False, make_t=False
+    )
+    p3.to_latex(
+        "papers/problem3_tab.tex",
+        header=["\(X\)", "\(Y\)", "\(\Delta X\)", "\(\Delta Y\)"],
+        escape=False,
+        float_format="{:0.2f}".format,
+    )
+    fig1 = vector_field("problem3", proportion=2 / 3, n=20, X_max=350, Y_max=350)
+    
+    path1 = p3.loc[:1998, :]
+    fig1 = add_path(fig1, path1, 2 / 3)
+    
+    path2 = p3.loc[1998:2008, :]
+    fig1 = add_path(fig1, path2, 2 / 3)
+    
+    label_path = p3.loc[[1990, 1998, 2008], :]
+    label_path["x_offset"] = [0, 10, 0]
+    label_path["y_offset"] = [0, -5, 30]
+    label_path = ColumnDataSource(label_path)
+    
+    fig1.circle(
+        x="X", y="Y", size=8, line_color="white", fill_color="White", source=label_path
+    )
+    
+    lbs = LabelSet(
+        x="X",
+        y="Y",
+        x_offset="x_offset",
+        y_offset="y_offset",
+        text="Year",
+        source=label_path,
+        text_font_size="15px",
+        text_color="white",
+    )
+    fig1.add_layout(lbs)
+    show(fig1)
+    export_png(fig1, filename="papers/charts/problem3_chart.png")
 
-# Problem 2
-print("Problem 2")
-p2 = trial(
-    200, 300, display=True, num_iter=18, pop_exit=False, shock=False, make_t=False
+# Problem 4
+print("\nProblem 4")
+p4 = trial(
+    200, 300, display=True, num_iter=18, pop_exit=False, shock=True, make_t=False
 )
-p2.to_latex(
-    "papers/problem2_tab.tex",
-    header=["\(X\)", "\(Y\)", "\(\Delta X\)", "\(\Delta Y\)"],
-    escape=False,
-    float_format="{:0.3e}".format,
-)
-
-# Problem 2
-print("\nProblem 3")
-p3 = trial(
-    100, 150, display=True, num_iter=18, pop_exit=False, shock=False, make_t=False
-)
-p3.to_latex(
-    "papers/problem3_tab.tex",
-    header=["\(X\)", "\(Y\)", "\(\Delta X\)", "\(\Delta Y\)"],
-    escape=False,
-    float_format="{:0.2f}".format,
-)
-fig1 = vector_field("problem3", proportion=2 / 3, n=20, X_max=350, Y_max=350)
-
-path1 = p3.loc[:1998, :]
-fig1 = add_path(fig1, path1, 2 / 3)
-
-path2 = p3.loc[1998:2008, :]
-fig1 = add_path(fig1, path2, 2 / 3)
-
-label_path = p3.loc[[1990, 1998, 2008], :]
-label_path["x_offset"] = [0, 10, 0]
-label_path["y_offset"] = [0, -5, 30]
-label_path = ColumnDataSource(label_path)
-
-fig1.circle(
-    x="X", y="Y", size=8, line_color="white", fill_color="White", source=label_path
-)
-
-lbs = LabelSet(
-    x="X",
-    y="Y",
-    x_offset="x_offset",
-    y_offset="y_offset",
-    text="Year",
-    source=label_path,
-    text_font_size="15px",
-    text_color="white",
-)
-fig1.add_layout(lbs)
-show(fig1)
-export_png(fig1, filename="papers/charts/problem3_chart.png")
-
+fig_p4 = vector_field("problem4", proportion=1, n=50, X_max=2000, Y_max=1000)
+path_p4 = p4.loc[:2000,:]
+fig_p4 = add_path(fig_p4, path_p4)
+show(fig_p4)
 #%%
-
+x_max = 2000
+y_max = 1000
+n = 50
+step = np.sqrt(x_max*y_max/n)
+x = np.arange(0, x_max, step)
+y = np.arange(0, y_max, step)
+xx, yy = np.meshgrid(x, y, sparse=True)
+xx
+#%%
 # fig1 = vector_field('problem3_img',proportion= 1, n = 35, X_max = 550, Y_max = 550)
 
 # df = make_matrix(500, 500, 500)
