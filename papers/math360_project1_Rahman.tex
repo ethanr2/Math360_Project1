@@ -98,6 +98,37 @@
 			\caption{The model evolution for the initial conditions \(X_{0} = 100\) and \(Y_{0} = 150\) given the parameters in table \ref{params1}.}
 			\label{tab:p3}
 		\end{table}
-		This can help explain why small changes in the initial condition of the populations can result in very different long term behaviors - the starting conditions basically determine whether the death function will be larger or smaller than the birth function very early on. And consistent with this description, the vector field in \ref{fig:p3} can give us an idea of which points result in growing populations and declining populations. 
+		This can help explain why small changes in the initial condition of the populations can result in very different long term behaviors - the starting conditions basically determine whether the death function will be larger or smaller than the birth function very early on. And consistent with this description, the vector field in \ref{fig:p3} indicates that lower starting populations tend to decline more often than higher starting populations. 
 		
+	\section*{Problem 4}
+		In this problem we have to impose a population shock on the bees in the year 1996 using the initial conditions \(X_{0} = 200\) and \(Y_{0} = 300\). The results of the script are depicted visually in figure \ref{fig:p4} and numerically in table \ref{tab:p3}.
+		\begin{figure}[htbp]
+			\centerline{\includegraphics[scale=.5]{charts/problem4_chart.png}}
+			\caption{Here the model runs just the same as it did in problem 2 until the year 1996 when the bee population shock is imposed.}
+			\label{fig:p4}
+		\end{figure}\\
+		In 1998 there are only 368 bees, which is much smaller than the 7,475 bee population from problem 2 at the same year. The clover population is 1,300 which is smaller than the original model prediction in problem 2 by more than a factor of 10. But figure \ref{fig:p4} shows that both populations only experience a population decline for a very short period of time. The clover population only declines for one year, and the model never actually gives bees a negative population growth rate outside of the exogenous shock. Both populations quickly recover and by 2008 there are 1.65e+171 bees and 3.31e+171 clover plants. 
+	
+		\begin{table} 
+			\centering
+			\input{problem4_tab.tex}
+			\caption{The model evolution for the initial conditions \(X_{0} = 200\) and \(Y_{0} = 300\) given the parameters in table \ref{params1} with an exogenous shock in to the bee population in the year 1996. The bee population is reduced by a factor of 10 relative to what was predicted in 1996 in the model from problem 1.}
+			\label{tab:p4}
+		\end{table}
+	
+	\section*{Problem 5}
+		The most obvious equilibrium that can be seen from the model alone is a trivial equilibrium - when both populations are zero. Nothing changes because both the birth and death terms of the equations are zero. The more interesting question is whether there are non-zero equilibria. By definition, an equilibrium point is when neither population changes. Setting \(\Delta X\) and \(\Delta Y\) equal to zero and solving for \(X_n\) and \(Y_n\)) will yield another equilibrium point. First, solving for \(Y_n\):  
+		\[0 = -aX_{n} + b X_{n}Y_{n}\]
+		\[a  = b Y_{n}\]
+		\[Y_{n} = \frac{a}{b} = \frac{0.2}{0.001} = 200\]
+		In order to solve for \(X_n\), the clover equation is needed:
+		\[0 = -cY_{n} + d X_{n}Y_{n}\]
+		\[c  = d X_{n}\]
+		\[X_{n} = \frac{c}{d} = \frac{0.3}{0.002} = 150\]
+		Therefore, 150 bees and 200 clover plants should be an equilibrium point for the system. This can be seen visually by looking at a slightly different the vector field in figure \ref{fig:p3}. In 
+		\begin{figure}[htbp]
+			\centerline{\includegraphics[scale=.5]{charts/problem5_chart.png}}
+			\caption{Here the model runs just the same as it did in problem 2 until the year 1996 when the bee population shock is imposed.}
+			\label{fig:p4}
+		\end{figure}\\
 \end{document}

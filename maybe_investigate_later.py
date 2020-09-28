@@ -148,3 +148,33 @@ def phase_space(x_0=100, y_0=200):
     return p
 
 #show(vector_field('test', size=20, proportion=1, n=20, X_max=550, Y_max=550, IVP = True))
+
+#%%
+
+# import holoviews as hv
+# hv.extension('bokeh')
+# size = 7
+# df = make_matrix(100, 500, 500)
+# mag =df["vector_color"]*size
+# angle = (np.pi/2.) - np.arctan2(df['dX_0']/mag, df['dY_0']/mag)
+# #df["Y_1"] = df["Y_0"] + df["dY_0"] #/ df["vector_color"] * size
+# data = (df['X_0'], df['Y_0'], angle, mag)
+# vf = hv.VectorField(data)
+# vf.opts(color='Magnitude',
+#         magnitude = 'Magnitude',
+#         width=800,
+#         height=800,
+#         title="Vector Field",
+#         xlabel="X",
+#         ylabel="Y",
+#         #y_range=(0, 500),
+#         #x_range=(0, 500)
+#         )
+# fig = hv.render(img)
+# name = str(dt.now())[:19].replace(" ", "").replace(":", "-")
+# output_file("imgs/vector_field{}.html".format(name))
+# show(fig)
+# #name = str(dt.now())[:19].replace(" ", "").replace(":", "-")
+# #hv.save(vf, "imgs/vector_field{}.png".format(name))
+# vf
+# #%%

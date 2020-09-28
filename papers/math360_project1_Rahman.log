@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2020.8.24)  27 SEP 2020 12:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2020.8.24)  28 SEP 2020 02:19
 entering extended mode
 **./math360_project1_Rahman.tex
 (math360_project1_Rahman.tex
@@ -226,7 +226,11 @@ Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 \Gm@dimlist=\toks24
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.cfg"))
-(math360_project1_Rahman.aux)
+(math360_project1_Rahman.aux
+
+LaTeX Warning: Label `fig:p4' multiply defined.
+
+)
 \openout1 = `math360_project1_Rahman.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
@@ -241,8 +245,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
-
-("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
+ ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count117
 \scratchdimen=\dimen145
@@ -326,29 +329,48 @@ File: charts/problem3_chart.png Graphic file (type png)
 <use charts/problem3_chart.png>
 Package pdftex.def Info: charts/problem3_chart.png  used on input line 87.
 (pdftex.def)             Requested size: 401.49902pt x 401.49902pt.
-[3 <./charts/problem3_chart.png>] (problem3_tab.tex) [4]
-(math360_project1_Rahman.aux) ) 
+[3 <./charts/problem3_chart.png>] (problem3_tab.tex)
+<charts/problem4_chart.png, id=26, 803.0pt x 803.0pt>
+File: charts/problem4_chart.png Graphic file (type png)
+<use charts/problem4_chart.png>
+Package pdftex.def Info: charts/problem4_chart.png  used on input line 106.
+(pdftex.def)             Requested size: 401.49902pt x 401.49902pt.
+ [4] [5 <./charts/problem4_chart.png>] (problem4_tab.tex) [6]
+<charts/problem5_chart.png, id=38, 803.0pt x 803.0pt>
+File: charts/problem5_chart.png Graphic file (type png)
+<use charts/problem5_chart.png>
+Package pdftex.def Info: charts/problem5_chart.png  used on input line 130.
+(pdftex.def)             Requested size: 401.49902pt x 401.49902pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 127--134
+
+ []
+
+[7 <./charts/problem5_chart.png>] (math360_project1_Rahman.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3759 strings out of 492945
- 51827 string characters out of 3135513
- 133709 words of memory out of 3000000
- 7597 multiletter control sequences out of 15000+200000
+ 3774 strings out of 492945
+ 52278 string characters out of 3135513
+ 133764 words of memory out of 3000000
+ 7607 multiletter control sequences out of 15000+200000
  14733 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,9n,35p,653b,222s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/
-pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\ethan\AppData\Local\MiKTeX\
-2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\ethan\AppData\Loc
-al\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\ethan\A
-ppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb>
-Output written on math360_project1_Rahman.pdf (5 pages, 182066 bytes).
+ 27i,9n,35p,662b,228s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
+ecrm1200.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/
+ec/dpi600\ecbx1728.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts
+/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on math360_project1_Rahman.pdf (8 pages, 615945 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
+ 188 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
