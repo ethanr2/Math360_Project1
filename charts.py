@@ -3,7 +3,8 @@
 from datetime import date
 from datetime import datetime as dt
 from time import time
-#import warnings
+
+# import warnings
 
 import numpy as np
 import pandas as pd
@@ -26,7 +27,7 @@ from bokeh.models.tickers import FixedTicker
 from bokeh.layouts import row, column
 from bokeh.palettes import Viridis256, Inferno256
 
-pd.set_option('mode.chained_assignment', None)
+pd.set_option("mode.chained_assignment", None)
 # Parameters
 
 START_YEAR = 1990
@@ -99,13 +100,13 @@ def trial(
             if max(X_next, Y_next) < 1000000:
                 print(
                     "{} {:10.2f} {:10.2f} {:10.2f} {:10.2f}".format(
-                        t + START_YEAR, X_next,Y_next, dX_next , dY_next
+                        t + START_YEAR, X_next, Y_next, dX_next, dY_next
                     )
                 )
             else:
                 print(
                     "{} {:10.2e} {:10.2e} {:10.2e} {:10.2e}".format(
-                        t + START_YEAR, X_next, Y_next, dX_next,  dY_next
+                        t + START_YEAR, X_next, Y_next, dX_next, dY_next
                     )
                 )
         t += 1
@@ -119,7 +120,7 @@ def trial(
     return data
 
 
-def make_matrix(n, X_max=550, Y_max=550, X_min = 0, Y_min = 0):
+def make_matrix(n, X_max=550, Y_max=550, X_min=0, Y_min=0):
     xdiff = X_max - X_min
     ydiff = Y_max - Y_min
     step = np.sqrt(xdiff * ydiff / n)
@@ -149,7 +150,7 @@ def make_matrix(n, X_max=550, Y_max=550, X_min = 0, Y_min = 0):
             Y.append(rez["Y"])
             ts.append(rez["t"])
             vect_colors.append(np.sqrt(rez["dX"][0] ** 2 + rez["dY"][0] ** 2))
-            # print(i, j)
+            if n > 3000: print(i, j)
 
     data = {
         "X_0": x_noughts,
@@ -173,14 +174,15 @@ def make_matrix(n, X_max=550, Y_max=550, X_min = 0, Y_min = 0):
     return df
 
 
-def histogram_coloring():
+def histogram_coloring(n):
+    df = make_matrix(n, X_max=500, Y_max=500, X_min=0, Y_min=0)
     source = ColumnDataSource(df)
     p = figure(
         width=800,
         height=800,
-        title="Histogram Coloring of Initial Points",
-        x_axis_label="X",
-        y_axis_label="Y",
+        title="Problem 6: Histogram Coloring of Initial Points",
+        x_axis_label="X - Bee Population",
+        y_axis_label="Y - Clover Population",
         y_range=(0, 500),
         x_range=(0, 500),
     )
@@ -195,17 +197,18 @@ def histogram_coloring():
 
     p.xgrid.grid_line_color = None
     p.ygrid.grid_line_color = None
-    name = str(dt.now())[:19].replace(" ", "").replace(":", "-")
-    export_png(p, filename="imgs/histo_coloring{}.png".format(name))
+
 
     return p
 
+
 class VectorField(object):
-    def __init__(self,
+    def __init__(
+        self,
         name,
         title="Math 360 - Project 1: Vector Field",
         size=20,
-        rescale= True,
+        rescale=True,
         proportion=1,
         n=20,
         X_min=0,
@@ -215,21 +218,25 @@ class VectorField(object):
     ):
         self.size = size
         self.proportion = proportion
-        #self.n = n
-        #self.X_max = X_max
-        #self.Y_max = Y_max
-        
+
         self.df = make_matrix(n, X_max=X_max, Y_max=Y_max, X_min=X_min, Y_min=Y_min)
 
         if rescale:
-            self.df["X_1"] = self.df["X_0"] + self.df['dX_0'] / self.df["vector_color"] * size  * proportion
-            self.df["Y_1"] = self.df["Y_0"] + self.df["dY_0"] / self.df["vector_color"]  * size* proportion * (Y_max-Y_min) / (X_max - X_min)
-            
+            self.df["X_1"] = (
+                self.df["X_0"]
+                + self.df["dX_0"] / self.df["vector_color"] * size * proportion
+            )
+            self.df["Y_1"] = self.df["Y_0"] + self.df["dY_0"] / self.df[
+                "vector_color"
+            ] * size * proportion * (Y_max - Y_min) / (X_max - X_min)
+
         else:
-            self.df["X_1"] = self.df["X_0"] + self.df['dX_0'] * proportion
-            self.df["Y_1"] = self.df["Y_0"] + self.df["dY_0"] * proportion * (Y_max-Y_min) / (X_max - X_min)
+            self.df["X_1"] = self.df["X_0"] + self.df["dX_0"] * proportion
+            self.df["Y_1"] = self.df["Y_0"] + self.df["dY_0"] * proportion * (
+                Y_max - Y_min
+            ) / (X_max - X_min)
         source = ColumnDataSource(self.df)
-    
+
         self.p = figure(
             width=800,
             height=800,
@@ -239,12 +246,14 @@ class VectorField(object):
             x_range=(X_min, X_max - 50),
             y_range=(Y_min, Y_max - 50),
         )
-    
+
         mapper = LinearColorMapper(
-            palette=Viridis256, low=self.df["vector_color"].max(), high=self.df["vector_color"].min()
+            palette=Viridis256,
+            low=self.df["vector_color"].max(),
+            high=self.df["vector_color"].min(),
         )
         colors = {"field": "vector_color", "transform": mapper}
-    
+
         self.p.add_layout(
             Arrow(
                 end=NormalHead(line_color=None, size=2 / proportion),
@@ -257,39 +266,44 @@ class VectorField(object):
                 line_color=colors,
             )
         )
-    
+
         self.p.xaxis[0].ticker.desired_num_ticks = 10
         self.p.xgrid.grid_line_color = None
         self.p.ygrid.grid_line_color = None
         self.p.background_fill_color = "#4A4A4A"
-    
-    
-    def add_path(self, path, shock=False):
+
+    def add_path(self, path, shock=False, thin = False):
         path["X_1"] = path["X"] + path["dX"]
         path["Y_1"] = path["Y"] + path["dY"]
         if shock:
             path["X_1"] = path["X_1"] / 10
-    
+        
+        if thin:
+            width = 1/self.proportion
+        else:
+            width = 2/self.proportion
+            
         self.p.line(
             x=path.iloc[:-1, 0],
             y=path.iloc[:-1, 1],
             line_color="white",
-            line_width=2 / self.proportion,
+            line_width=width,
         )
-    
+
         last = path.iloc[-2, :]
         self.p.add_layout(
             Arrow(
-                end=NormalHead(line_color=None, fill_color="white", size=4 / self.proportion),
+                end=NormalHead(
+                    line_color=None, fill_color="white", size=4 / self.proportion
+                ),
                 x_start=last["X"],
                 y_start=last["Y"],
                 x_end=last["X_1"],
                 y_end=last["Y_1"],
-                line_width=2 / self.proportion,
+                line_width=width,
                 line_color="#FFFFFF",
             )
         )
-        
 
 
 def problem_2():
@@ -322,10 +336,10 @@ def problem_3():
 
     # Make the white phase diagram
     path1 = p3.loc[:1998, :]
-    fig.add_path(path1)
+    fig.add_path(path1, thin = True)
 
     path2 = p3.loc[1998:2008, :]
-    fig.add_path(path2)
+    fig.add_path(path2, thin = True)
 
     label_path = p3.loc[[1990, 1998, 2008], :]
     label_path["x_offset"] = [0, 10, 0]
@@ -358,24 +372,31 @@ def problem_3():
     export_png(fig.p, filename="papers/charts/problem3_chart.png")
     return fig
 
+
 def problem_4():
     print("\nProblem 4")
     p4 = trial(
         200, 300, display=True, num_iter=18, pop_exit=False, shock=True, make_t=False
     )
-    fig_p4 = VectorField( 
-        "problem4", proportion=2, size=10, n=1500, X_max=800, Y_max=2000, title = 'Problem 4: Vector Field'
+    fig_p4 = VectorField(
+        "problem4",
+        proportion=2,
+        size=10,
+        n=1500,
+        X_max=800,
+        Y_max=2000,
+        title="Problem 4: Vector Field",
     )
 
     # Make the white phase diagram
     path1 = p4.loc[:1995, :]
-    fig_p4.add_path( path1)
+    fig_p4.add_path(path1)
 
     path2 = p4.loc[1995:1996, :]
-    fig_p4.add_path( path2, shock=True)
+    fig_p4.add_path(path2, shock=True)
 
     path3 = p4.loc[1996:2000, :]
-    fig_p4.add_path( path3)
+    fig_p4.add_path(path3)
 
     label_path = p4.loc[[1990, 1996], :]
     label_path["x_offset"] = [-40, 10]
@@ -409,35 +430,47 @@ def problem_4():
     )
     export_png(fig_p4.p, filename="papers/charts/problem4_chart.png")
 
+
 def problem_5():
     print("\nProblem 5")
-    
-    fig =  VectorField( 
-            "problem4", proportion=2/3, rescale = False, n=1000, 
-            X_max = 350, 
-            Y_max =  350, 
-            title = 'Problem 5: Equilibrium Points', 
-            X_min = 0, 
-            Y_min = 0, 
-        )
-    
-    fig.p.circle(150, 200, line_color = '#ffffff', fill_color= "#ffffff")
-    # Make the white phase diagram
-    path = trial(
-        149, 199, display=True, pop_exit=True, shock=False, make_t=False
+
+    fig = VectorField(
+        "problem4",
+        proportion=2 / 3,
+        rescale=False,
+        n=1000,
+        X_max=350,
+        Y_max=350,
+        title="Problem 5: Equilibrium Points",
+        X_min=0,
+        Y_min=0,
     )
-    fig.add_path(path)
+
+    fig.p.circle(150, 200, line_color="#ffffff", fill_color="#ffffff")
+    # Make the white phase diagram
+    path = trial(149, 199, display=True, pop_exit=True, shock=False, make_t=False)
+    fig.add_path(path, thin = True)
     show(fig.p)
     # Export
     export_png(fig.p, filename="papers/charts/problem5_chart.png")
+
+def problem_6():
+    print("\nProblem 6")
+    fig = histogram_coloring(500*500)
+    fig.circle(150, 200, line_color="#ffffff", fill_color="#ffffff")
+    show(fig)
+    export_png(fig, filename="papers/charts/problem6_chart.png")
 #%%
-def main():
+def main(redo_p6 = False):
+    
     problem_2()
     problem_3()
     problem_4()
     problem_5()
-
-main()
+    # Problem 6 is computationally intense! don't run it routinely as part of tests. 
+    if redo_p6:
+        problem_6()
+main(True)
 #%%
 # fig_p3 = VectorField('problem3_img',proportion= 1, n = 35, X_max = 550, Y_max = 550)
 
