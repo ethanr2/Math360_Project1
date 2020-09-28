@@ -7,6 +7,8 @@ from time import time
 import numpy as np
 import pandas as pd
 from scipy import stats
+from scipy.special import lambertw
+from scipy.integrate import solve_ivp
 
 from bokeh.io import export_png, output_file, show
 from bokeh.plotting import figure
@@ -65,7 +67,6 @@ def trial(
             )
         )
 
-        
     while iterate:
         # print(X[-1],dX )
         X_next = X[-1] + dX[-1]
@@ -117,6 +118,12 @@ def trial(
 
 
 def make_matrix(n, X_max=550, Y_max=550):
+    step = np.sqrt(X_max*Y_max/n)
+    av = (X_max + Y_max)/2
+    x_coords = np.arange(0, X_max, step * X_max/av)
+    y_coords = np.arange(0, Y_max, step * Y_max/av)
+    xx, yy = np.meshgrid(x_coords, y_coords, sparse=True)
+   
     x_noughts = []
     dx_noughts = []
     X = []
@@ -127,11 +134,9 @@ def make_matrix(n, X_max=550, Y_max=550):
     step = X_max / n
     arr_i = []
     vect_colors = []
-    for i in range(n):
-        arr_j = []
-        for j in range(n):
-            arr_j.append((i * step, j * step))
-            rez = trial(i * step, j * step)
+    for i in range(len(xx[0])):
+        for j in range(len(yy)):
+            rez = trial(xx[0][i], yy[j][0])
             x_noughts.append(rez["X"][0])
             y_noughts.append(rez["Y"][0])
             dx_noughts.append(rez["dX"][0])
@@ -140,8 +145,8 @@ def make_matrix(n, X_max=550, Y_max=550):
             Y.append(rez["Y"])
             ts.append(rez["t"])
             vect_colors.append(np.sqrt(rez["dX"][0] ** 2 + rez["dY"][0] ** 2))
-            print(i, j)
-        arr_i.append(arr_j)
+            #print(i, j)
+        
     data = {
         "X_0": x_noughts,
         "dX_0": dx_noughts,
@@ -191,87 +196,20 @@ def histogram_coloring():
 
     return p
 
-
-def histogram_coloring2():
-    source = ColumnDataSource(df)
-    p = figure(
-        width=800,
-        height=800,
-        title="Histogram Coloring of Initial Points",
-        x_axis_label="dX",
-        y_axis_label="dY",
-        # y_range=(0, 500),
-        # x_range=(0, 500),
-    )
-
-    mapper = LinearColorMapper(
-        palette=Viridis256, low=df["color"].max(), high=df["color"].min()
-    )
-    colors = {"field": "color", "transform": mapper}
-
-    p.circle(x="dX_0", y="dY_0", color=colors, source=source, size=1.5)
-    p.xaxis[0].ticker.desired_num_ticks = 10
-
-    p.xgrid.grid_line_color = None
-    p.ygrid.grid_line_color = None
-    name = str(dt.now())[:19].replace(" ", "").replace(":", "-")
-    export_png(p, filename="imgs/histo_coloringdxdxy{}.png".format(name))
-
-    return p
-
-
-# df = make_matrix(250, -500, -500)
-# show(histogram_coloring2())
-
-
-def phase_space(x_0=100, y_0=200):
-    p = figure(
-        width=800,
-        height=800,
-        title="Phase Space: X = {}, Y = {}".format(x_0, y_0),
-        x_axis_label="X",
-        y_axis_label="Y",
-        y_range=(0, 300),
-        x_range=(0, 300),
-    )
-
-    mapper = LinearColorMapper(
-        palette=Viridis256, low=df["color"].max(), high=df["color"].min()
-    )
-    colors = {"field": "color", "transform": mapper}
-
-    row = trial(x_0, y_0)
-    xdata = row["X"]
-    ydata = row["Y"]
-    p.line(xdata, ydata, color="black")
-    # for i, row in df.iterrows():
-    #     xdata = row["X_0"]
-    #     ydata = row["Y_0"]
-    #     p.line(xdata, ydata, color="black")
-
-    p.xaxis[0].ticker.desired_num_ticks = 10
-    p.xgrid.grid_line_color = None
-    p.ygrid.grid_line_color = None
-
-    name = str(dt.now())[:19].replace(" ", "").replace(":", "-")
-    export_png(p, filename="imgs/phase_space{}.png".format(name))
-
-    return p
-
-
-def vector_field(name, size=20, proportion=1, n=20, X_max=550, Y_max=550):
+def vector_field(name,title="Math 360 - Project 1: Vector Field", size=20, proportion=1, n=20, X_max=550, Y_max=550):
     df = make_matrix(n, X_max, Y_max)
-    df["X_1"] = df["X_0"] + df["dX_0"] / df["vector_color"] * size
-    df["Y_1"] = df["Y_0"] + df["dY_0"] / df["vector_color"] * size
+    df["X_1"] = df["X_0"] + df["dX_0"] / df["vector_color"] * size *proportion
+    df["Y_1"] = df["Y_0"] + df["dY_0"] / df["vector_color"] * size * proportion * Y_max/X_max
     source = ColumnDataSource(df)
+    
     p = figure(
         width=800,
         height=800,
-        title="Vector Field",
+        title=title,
         x_axis_label="X",
         y_axis_label="Y",
-        y_range=(0, X_max - 50),
-        x_range=(0, Y_max - 50),
+        x_range=(0, X_max - 50),
+        y_range=(0, Y_max - 50),
     )
 
     mapper = LinearColorMapper(
@@ -300,9 +238,12 @@ def vector_field(name, size=20, proportion=1, n=20, X_max=550, Y_max=550):
     return p
 
 
-def add_path(p, path, proportion=1):
+def add_path(p, path, proportion=1, shock = False):
     path["X_1"] = path["X"] + path["dX"]
     path["Y_1"] = path["Y"] + path["dY"]
+    if shock:
+        path["X_1"] = path["X_1"]/10
+
     p.line(
         x=path.iloc[:-1, 0],
         y=path.iloc[:-1, 1],
@@ -324,8 +265,7 @@ def add_path(p, path, proportion=1):
     )
     return p
 
-def main():
-    # Problem 2
+def problem_2():
     print("Problem 2")
     p2 = trial(
         200, 300, display=True, num_iter=18, pop_exit=False, shock=False, make_t=False
@@ -337,31 +277,75 @@ def main():
         float_format="{:0.3e}".format,
     )
     
-    # Problem 3
+def problem_3():
     print("\nProblem 3")
     p3 = trial(
         100, 150, display=True, num_iter=18, pop_exit=False, shock=False, make_t=False
     )
+
+    fig_p3 = vector_field("problem3", title ='Problem 3: Vector Field', proportion=2 / 3, 
+                        n=400, X_max=350, Y_max=350)
+    
+    # Make the white phase diagram
+    path1 = p3.loc[:1998, :]
+    fig_p3 = add_path(fig_p3, path1, 2 / 3)
+
+    path2 = p3.loc[1998:2008, :]
+    fig_p3 = add_path(fig_p3, path2, 2 / 3)
+
+    label_path = p3.loc[[1990, 1998, 2008], :]
+    label_path["x_offset"] = [0, 10, 0]
+    label_path["y_offset"] = [0, -5, 30]
+    label_path = ColumnDataSource(label_path)
+
+    fig_p3.circle(
+        x="X", y="Y", size=8, line_color="white", fill_color="White", source=label_path
+    )
+
+    lbs = LabelSet(
+        x="X",
+        y="Y",
+        x_offset="x_offset",
+        y_offset="y_offset",
+        text="Year",
+        source=label_path,
+        text_font_size="15px",
+        text_color="white",
+    )
+    fig_p3.add_layout(lbs)
+    show(fig_p3)
+    # Export
     p3.to_latex(
         "papers/problem3_tab.tex",
         header=["\(X\)", "\(Y\)", "\(\Delta X\)", "\(\Delta Y\)"],
         escape=False,
         float_format="{:0.2f}".format,
     )
-    fig1 = vector_field("problem3", proportion=2 / 3, n=20, X_max=350, Y_max=350)
+    export_png(fig_p3, filename="papers/charts/problem3_chart.png")
+
+def problem_4():
+    print("\nProblem 4")
+    p4 = trial(
+        200, 300, display=True, num_iter=18, pop_exit=False, shock=True, make_t=False
+    )
+    fig_p4 = vector_field("problem4", proportion=2,size = 10, n=1500, X_max=800, Y_max=2000)
     
-    path1 = p3.loc[:1998, :]
-    fig1 = add_path(fig1, path1, 2 / 3)
+    # Make the white phase diagram
+    path1 = p4.loc[:1995, :]
+    fig_p4 = add_path(fig_p4, path1)
     
-    path2 = p3.loc[1998:2008, :]
-    fig1 = add_path(fig1, path2, 2 / 3)
+    path2 = p4.loc[1995:1996, :]
+    fig_p4 = add_path(fig_p4, path2, shock = True)
     
-    label_path = p3.loc[[1990, 1998, 2008], :]
-    label_path["x_offset"] = [0, 10, 0]
-    label_path["y_offset"] = [0, -5, 30]
+    path3 = p4.loc[1996:2000, :]
+    fig_p4 = add_path(fig_p4, path3)
+    
+    label_path = p4.loc[[1990, 1996], :]
+    label_path["x_offset"] = [-40, 10]
+    label_path["y_offset"] = [0, -5]
     label_path = ColumnDataSource(label_path)
     
-    fig1.circle(
+    fig_p4.circle(
         x="X", y="Y", size=8, line_color="white", fill_color="White", source=label_path
     )
     
@@ -375,30 +359,29 @@ def main():
         text_font_size="15px",
         text_color="white",
     )
-    fig1.add_layout(lbs)
-    show(fig1)
-    export_png(fig1, filename="papers/charts/problem3_chart.png")
+    fig_p4.add_layout(lbs)
+    
+    show(fig_p4)
+    
+    
+    # Export 
+    p4.to_latex(
+            "papers/problem4_tab.tex",
+            header=["\(X\)", "\(Y\)", "\(\Delta X\)", "\(\Delta Y\)"],
+            escape=False,
+            float_format="{:0.2f}".format,
+        )
+    export_png(fig_p4, filename="papers/charts/problem4_chart.png")
+    
 
-# Problem 4
-print("\nProblem 4")
-p4 = trial(
-    200, 300, display=True, num_iter=18, pop_exit=False, shock=True, make_t=False
-)
-fig_p4 = vector_field("problem4", proportion=1, n=50, X_max=2000, Y_max=1000)
-path_p4 = p4.loc[:2000,:]
-fig_p4 = add_path(fig_p4, path_p4)
-show(fig_p4)
 #%%
-x_max = 2000
-y_max = 1000
-n = 50
-step = np.sqrt(x_max*y_max/n)
-x = np.arange(0, x_max, step)
-y = np.arange(0, y_max, step)
-xx, yy = np.meshgrid(x, y, sparse=True)
-xx
+def main():
+    problem_2()
+    problem_3()
+    problem_4()
+main()
 #%%
-# fig1 = vector_field('problem3_img',proportion= 1, n = 35, X_max = 550, Y_max = 550)
+# fig_p3 = vector_field('problem3_img',proportion= 1, n = 35, X_max = 550, Y_max = 550)
 
 # df = make_matrix(500, 500, 500)
 # f = make_matrix(25, 500, 500)

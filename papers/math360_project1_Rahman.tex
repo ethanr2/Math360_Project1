@@ -77,7 +77,7 @@
 		\end{table}
 	\section*{Problem 3}
 		For problem 3 we use the same parameters in table \ref{params1} but with initial values \(X_{0} = 100\) and \(Y_{0} = 150\). The results here are much more amenable to a visual representation. Figure \ref{fig:p3} depicts the model as a vector field with the specific path taken by the populations when they start at the given initial values.\\ 
-		In 1998, the population of bees declines to 50 and the population of clovers is 52. By 2008 there are only 6 bees and 2 clovers. More specific values for the evolution of the population model are given in table \ref{tab:p3}. Over time it appears that both organisms go extinct. \\
+		In 1998, the population of bees declines to 43 and the population of clovers is 42. By 2008 there are only 6 bees and 2 clovers. More specific values for the evolution of the population model are given in table \ref{tab:p3}. Over time it appears that both organisms go extinct. \\
 		The model does not result in the populations being cut in half from the populations in table \ref{tab:p2} from problem 2. This is because the model is defined by non-linear difference equations. To illustrate this, set \(X_{n} = 2X_{n}\) and \(Y_{n} = 2Y_{n}\) in the birth functions for bees and clovers:
 		\[X_{Birth} = b (2X_{n})(2Y_{n}) = 4bX_{n}Y_{n}\]
 		\[Y_{Birth} = d (2X_{n})(2Y_{n}) = 4dX_{n}Y_{n}\]
@@ -98,6 +98,6 @@
 			\caption{The model evolution for the initial conditions \(X_{0} = 100\) and \(Y_{0} = 150\) given the parameters in table \ref{params1}.}
 			\label{tab:p3}
 		\end{table}
-		This can help explain why small changes in the initial condition of the populations can result in very different long term behaviors - the starting conditions determine whether the 
+		This can help explain why small changes in the initial condition of the populations can result in very different long term behaviors - the starting conditions basically determine whether the death function will be larger or smaller than the birth function very early on. And consistent with this description, the vector field in \ref{fig:p3} can give us an idea of which points result in growing populations and declining populations. 
 		
 \end{document}
