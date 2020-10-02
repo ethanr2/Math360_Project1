@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2020.8.24)  28 SEP 2020 02:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2020.8.24)  1 OCT 2020 23:16
 entering extended mode
 **./math360_project1_Rahman.tex
 (math360_project1_Rahman.tex
@@ -226,35 +226,82 @@ Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 \Gm@dimlist=\toks24
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/geometry\geometry.cfg"))
-(math360_project1_Rahman.aux)
+(C:\Users\ethan\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pdfpages.sty
+Package: pdfpages 2020/01/28 v0.5q Insert pages of external PDF documents (AM)
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(C:\Users\ethan\AppData\Local\Programs\MiKTeX\tex/latex/eso-pic\eso-pic.sty
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\atbegshi.sty"
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+))
+("C:\Program Files\MiKTeX 2.9\tex/latex/xcolor\xcolor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+))
+\AM@pagewidth=\dimen145
+\AM@pageheight=\dimen146
+
+(C:\Users\ethan\AppData\Local\Programs\MiKTeX\tex/latex/pdfpages\pppdftex.def
+File: pppdftex.def 2020/01/28 v0.5q Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box30
+\AM@global@opts=\toks25
+\AM@pagecnt=\count117
+\AM@toc@title=\toks26
+\c@AM@survey=\count118
+\AM@templatesizebox=\box31
+) (math360_project1_Rahman.aux)
 \openout1 = `math360_project1_Rahman.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
 
 ("C:\Program Files\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
-\scratchdimen=\dimen145
-\scratchbox=\box30
-\nofMPsegments=\count118
-\nofMParguments=\count119
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count120
-\MPscratchDim=\dimen146
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
-\everyMPtoPDFconversion=\toks26
+\scratchcounter=\count119
+\scratchdimen=\dimen147
+\scratchbox=\box32
+\nofMPsegments=\count120
+\nofMParguments=\count121
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count122
+\MPscratchDim=\dimen148
+\MPnumerator=\count123
+\makeMPintoPDFobject=\count124
+\everyMPtoPDFconversion=\toks28
 )
 (C:\Users\ethan\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
 ase.sty
@@ -296,75 +343,179 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 22.
+\AtBeginShipoutBox=\box33
+("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\pdflscape.sty"
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\lscape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 26.
+
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 22.
+LaTeX Font Info:    Try loading font information for U+msb on input line 26.
 
 ("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{C:/Users/ethan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
+{C:/Users/ethan/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (math360_pr
+oject1_Rahman.toc)
+\tf@toc=\write3
+\openout3 = `math360_project1_Rahman.toc'.
+
+[1
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
+
+ []
+
+[2
+
+]
+
+pdfTeX warning: pdflatex.exe (file ./project1.pdf): PDF inclusion: found PDF ve
+rsion <1.7>, but at most version <1.5> allowed
+<project1.pdf, id=16, 597.23125pt x 845.1575pt>
+File: project1.pdf Graphic file (type pdf)
+<use project1.pdf>
+Package pdftex.def Info: project1.pdf  used on input line 37.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./project1.pdf): PDF inclusion: found PDF ve
+rsion <1.7>, but at most version <1.5> allowed
+File: project1.pdf Graphic file (type pdf)
+<use project1.pdf>
+Package pdftex.def Info: project1.pdf  used on input line 37.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+
+
+pdfTeX warning: pdflatex.exe (file ./project1.pdf): PDF inclusion: found PDF ve
+rsion <1.7>, but at most version <1.5> allowed
+
+
+pdfTeX warning: pdflatex.exe (file ./project1.pdf): PDF inclusion: found PDF ve
+rsion <1.7>, but at most version <1.5> allowed
+<project1.pdf, id=19, page=1, 597.23125pt x 845.1575pt>
+File: project1.pdf Graphic file (type pdf)
+<use project1.pdf, page 1>
+Package pdftex.def Info: project1.pdf , page1 used on input line 37.
+(pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
+File: project1.pdf Graphic file (type pdf)
+<use project1.pdf, page 1>
+Package pdftex.def Info: project1.pdf , page1 used on input line 37.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+[3
+
+]
+File: project1.pdf Graphic file (type pdf)
+<use project1.pdf, page 1>
+Package pdftex.def Info: project1.pdf , page1 used on input line 37.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: project1.pdf Graphic file (type pdf)
+<use project1.pdf, page 1>
+Package pdftex.def Info: project1.pdf , page1 used on input line 37.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+File: project1.pdf Graphic file (type pdf)
+<use project1.pdf, page 1>
+Package pdftex.def Info: project1.pdf , page1 used on input line 37.
+(pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
+ [4 <./project1.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 48--49
+Underfull \hbox (badness 10000) in paragraph at lines 67--68
 
  []
 
-(problem2_tab.tex) [1] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 83--85
+(problem2_tab.tex) [5
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 104--106
 
  []
 
-<charts/problem3_chart.png, id=20, 803.0pt x 803.0pt>
+<charts/problem3_chart.png, id=39, 803.0pt x 803.0pt>
 File: charts/problem3_chart.png Graphic file (type png)
 <use charts/problem3_chart.png>
-Package pdftex.def Info: charts/problem3_chart.png  used on input line 87.
+Package pdftex.def Info: charts/problem3_chart.png  used on input line 108.
 (pdftex.def)             Requested size: 401.49902pt x 401.49902pt.
-[3 <./charts/problem3_chart.png>] (problem3_tab.tex)
-<charts/problem4_chart.png, id=26, 803.0pt x 803.0pt>
+(problem3_tab.tex) [6] [7] [8 <./charts/problem3_chart.png>]
+<charts/problem4_chart.png, id=53, 803.0pt x 803.0pt>
 File: charts/problem4_chart.png Graphic file (type png)
 <use charts/problem4_chart.png>
-Package pdftex.def Info: charts/problem4_chart.png  used on input line 106.
+Package pdftex.def Info: charts/problem4_chart.png  used on input line 128.
 (pdftex.def)             Requested size: 401.49902pt x 401.49902pt.
- [4] [5 <./charts/problem4_chart.png>] (problem4_tab.tex) [6]
-<charts/problem5_chart.png, id=38, 803.0pt x 803.0pt>
+ (problem4_tab.tex) [9] [10 <./charts/problem4_chart.png>] [11]
+<charts/problem5_chart.png, id=64, 803.0pt x 803.0pt>
 File: charts/problem5_chart.png Graphic file (type png)
 <use charts/problem5_chart.png>
-Package pdftex.def Info: charts/problem5_chart.png  used on input line 130.
+Package pdftex.def Info: charts/problem5_chart.png  used on input line 153.
+(pdftex.def)             Requested size: 401.49902pt x 401.49902pt.
+<charts/problem6_chart.png, id=65, 803.0pt x 803.0pt>
+File: charts/problem6_chart.png Graphic file (type png)
+<use charts/problem6_chart.png>
+Package pdftex.def Info: charts/problem6_chart.png  used on input line 162.
 (pdftex.def)             Requested size: 401.49902pt x 401.49902pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 127--134
+Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
-[7 <./charts/problem5_chart.png>] (math360_project1_Rahman.aux) ) 
+[12] [13 <./charts/problem5_chart.png>] [14 <./charts/problem6_chart.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 172--173
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 179--181
+
+ []
+
+<charts/problem7_chart.png, id=78, 803.0pt x 803.0pt>
+File: charts/problem7_chart.png Graphic file (type png)
+<use charts/problem7_chart.png>
+Package pdftex.def Info: charts/problem7_chart.png  used on input line 203.
+(pdftex.def)             Requested size: 401.49902pt x 401.49902pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--207
+
+ []
+
+[15] [16] [17 <./charts/problem7_chart.png>] (math360_project1_Rahman.aux) ) 
 Here is how much of TeX's memory you used:
- 3775 strings out of 492945
- 52286 string characters out of 3135513
- 133733 words of memory out of 3000000
- 7608 multiletter control sequences out of 15000+200000
- 14733 words of font info for 48 fonts, out of 3000000 for 9000
+ 5199 strings out of 492945
+ 73400 string characters out of 3135513
+ 166877 words of memory out of 3000000
+ 8982 multiletter control sequences out of 15000+200000
+ 17739 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 27i,9n,35p,709b,228s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\eth
-an\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:
-\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx17
-28.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi
-600\ecrm1440.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecrm2074.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on math360_project1_Rahman.pdf (8 pages, 616324 bytes).
+ 37i,18n,43p,787b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C
+:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1
+200.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dp
+i600\ecbx1728.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jkna
+ppen/ec/dpi600\ecrm1200.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/l
+jfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\
+fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\ethan\AppData\Local\M
+iKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\ethan\AppDa
+ta\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb>
+Output written on math360_project1_Rahman.pdf (18 pages, 1526795 bytes).
 PDF statistics:
- 189 PDF objects out of 1000 (max. 8388607)
+ 295 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -4,7 +4,19 @@ Created on Sun Sep 27 20:27:41 2020
 
 @author: ethan
 """
+import numpy as np
+import pandas as pd
+from scipy.special import lambertw as W
 
+def y(x): return -200 *W(-0.00089745 *np.ex(np.exp(-2*x )* x**300)**(1/200), 0)
+X = np.linspace(30, 500, 100)
+Y = pd.Series(y(X)).apply(lambda x: x.real)
+XY = pd.DataFrame({
+    'X':X,
+    'Y':Y
+    })
+XY
+#%%
 def f(x, y): return (-c*y+d*x*y)/(-a*x+d*x*y)
 
 def impr_euler(x_0, x_f, y_0, h = 1):

@@ -38,6 +38,8 @@ c = 0.3
 d = 0.002
 ts = []
 
+alpha = 1/3
+beta = 2/3
 
 def model(x, y):
     dX = -a * x + b * x * y
@@ -150,7 +152,8 @@ def make_matrix(n, X_max=550, Y_max=550, X_min=0, Y_min=0):
             Y.append(rez["Y"])
             ts.append(rez["t"])
             vect_colors.append(np.sqrt(rez["dX"][0] ** 2 + rez["dY"][0] ** 2))
-            if n > 3000: print(i, j)
+            if n > 3000:
+                print(i, j)
 
     data = {
         "X_0": x_noughts,
@@ -197,7 +200,6 @@ def histogram_coloring(n):
 
     p.xgrid.grid_line_color = None
     p.ygrid.grid_line_color = None
-
 
     return p
 
@@ -272,17 +274,17 @@ class VectorField(object):
         self.p.ygrid.grid_line_color = None
         self.p.background_fill_color = "#4A4A4A"
 
-    def add_path(self, path, shock=False, thin = False):
+    def add_path(self, path, shock=False, thin=False):
         path["X_1"] = path["X"] + path["dX"]
         path["Y_1"] = path["Y"] + path["dY"]
         if shock:
             path["X_1"] = path["X_1"] / 10
-        
+
         if thin:
-            width = 1/self.proportion
+            width = 1 / self.proportion
         else:
-            width = 2/self.proportion
-            
+            width = 2 / self.proportion
+
         self.p.line(
             x=path.iloc[:-1, 0],
             y=path.iloc[:-1, 1],
@@ -336,10 +338,10 @@ def problem_3():
 
     # Make the white phase diagram
     path1 = p3.loc[:1998, :]
-    fig.add_path(path1, thin = True)
+    fig.add_path(path1, thin=True)
 
     path2 = p3.loc[1998:2008, :]
-    fig.add_path(path2, thin = True)
+    fig.add_path(path2, thin=True)
 
     label_path = p3.loc[[1990, 1998, 2008], :]
     label_path["x_offset"] = [0, 10, 0]
@@ -449,27 +451,32 @@ def problem_5():
     fig.p.circle(150, 200, line_color="#ffffff", fill_color="#ffffff")
     # Make the white phase diagram
     path = trial(149, 199, display=True, pop_exit=True, shock=False, make_t=False)
-    fig.add_path(path, thin = True)
+    fig.add_path(path, thin=True)
     show(fig.p)
     # Export
     export_png(fig.p, filename="papers/charts/problem5_chart.png")
 
+
 def problem_6():
     print("\nProblem 6")
-    fig = histogram_coloring(500*500)
-    fig.circle(150, 200, line_color="#ffffff", fill_color="#ffffff")
+    fig = histogram_coloring(500 * 500)
+    fig.circle([0,150], [0,200], line_color="#ffffff", fill_color="#ffffff")
     show(fig)
     export_png(fig, filename="papers/charts/problem6_chart.png")
+
+
 #%%
-def main(redo_p6 = False):
-    
+def main(redo_p6=False):
+
     problem_2()
     problem_3()
     problem_4()
     problem_5()
-    # Problem 6 is computationally intense! don't run it routinely as part of tests. 
+    # Problem 6 is computationally intense! don't run it routinely as part of tests.
     if redo_p6:
         problem_6()
+
+
 main(True)
 #%%
 # fig_p3 = VectorField('problem3_img',proportion= 1, n = 35, X_max = 550, Y_max = 550)
