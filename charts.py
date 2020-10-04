@@ -36,8 +36,9 @@ c = 0.3
 d = 0.002
 ts = []
 
-alpha = 1/3
-beta = 2/3
+alpha = 1 / 3
+beta = 2 / 3
+
 
 def model(x, y):
     dX = -a * x + b * x * y
@@ -458,7 +459,7 @@ def problem_5():
 def problem_6():
     print("\nProblem 6")
     fig = histogram_coloring(500 * 500)
-    fig.circle([0,150], [0,200], line_color="#ffffff", fill_color="#ffffff")
+    fig.circle([0, 150], [0, 200], line_color="#ffffff", fill_color="#ffffff")
     show(fig)
     export_png(fig, filename="papers/charts/problem6_chart.png")
 
@@ -476,13 +477,3 @@ def main(redo_p6=False):
 
 
 main(True)
-#%%
-# fig_p3 = VectorField('problem3_img',proportion= 1, n = 35, X_max = 550, Y_max = 550)
-
-# df = make_matrix(500, 500, 500)
-# f = make_matrix(25, 500, 500)
-
-# #df = make_matrix(30, 500, 500)
-# name = str(dt.now())[:19].replace(" ", "").replace(":", "-")
-# output_file("imgs/VectorField{}.html".format(name))
-# show(VectorField())

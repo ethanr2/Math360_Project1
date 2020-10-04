@@ -11,12 +11,14 @@
 \usepackage{booktabs}
 \usepackage[margin=1in]{geometry}
 \usepackage{pdfpages} 
+\usepackage{hyperref}
+\hypersetup{hidelinks=true}
 
 \newcommand\setItemnumber[1]{\setcounter{enumi}{\numexpr#1-1\relax}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\C}{\mathbb{C}}
-%\setcounter{secnumdepth}{0} 
+
 
 \date{September 28, 2020}
 \title{Math 360 - Project 1: Symbiosis (Mutualism)}
@@ -28,9 +30,10 @@
 	\pagebreak
 	\chapter*{Preface}
 	\addcontentsline{toc}{chapter}{Preface}
+	
 	This essay was my midterm for my class Math 360: Model Building in Applied Math. I was instructed to write responses to each of the questions in the "Problems" section of this document. Everything in the "Answers" section is what I ultimately turned in. \\
 	
-	Each of the charts and tables were generated using a Python script. The entire project is available on my github. Including the Python script, the .tex file that generated this document, and a master.sh file. The master.sh file re-runs the entire process from the top to the bottom of my workflow. It runs the Python Script, regenerates the tables and figures, and then re-compiles the LaTeX document in action. 
+	Each of the charts and tables were generated using two Python scripts. The entire project is available as a Github repository: \url{https://github.com/ethanr2/Math360_Project1}. This includes the Python scripts, the LaTeX file that generated this document, and a master.bat file. The master.bat file re-reproduces the entire process from the top to the bottom of my workflow. It runs the Python scripts, regenerates the tables and figures, and then re-compiles the LaTeX document in action. I figured that including a batch script like this is good research practice especially when working with teams or simply sharing the project with other researchers.
 	\pagebreak
 	\chapter*{Problems}
 	\addcontentsline{toc}{chapter}{Prompts}
@@ -39,7 +42,6 @@
 	\addcontentsline{toc}{chapter}{Answers}%
 	
 	\section*{Problem 1}
-		%\addcontentsline{toc}{chapter}{\protect\numberline{} Section 1}%
 		\addcontentsline{toc}{section}{Problem 1}%
 		Honey bees and clover plants have a symbiotic relationship that is mutually beneficial. The assigned problem attempts to model this relationship using a non-linear dynamical system. The model variables are defined in table 1 below.
 	

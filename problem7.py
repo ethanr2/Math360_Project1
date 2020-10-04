@@ -40,20 +40,24 @@ pd.set_option("mode.chained_assignment", None)
 START_YEAR = 1990
 POP_MAX = 10000
 a = 0.002
-b = .2
+b = 0.2
 c = 0.004
-d = .3
+d = 0.3
 ts = []
 
 alpha1 = 1.5
 beta1 = 100
 alpha2 = 3
 beta2 = 200
+
+
 def model(x, y):
-    dX = -a * x**2 + b * x + (alpha1*x*y)/(beta1+y)
-    dY = -c * y**2 + d * y  + (alpha2*x*y)/(beta2+x)
-    
+    dX = -a * x ** 2 + b * x + (alpha1 * x * y) / (beta1 + y)
+    dY = -c * y ** 2 + d * y + (alpha2 * x * y) / (beta2 + x)
+
     return dX, dY
+
+
 def trial(
     x_0=149,
     y_0=201,
@@ -127,11 +131,9 @@ def trial(
         data.index.name = "Year"
     return data
 
-p3 = trial(
-        1, 1, display=True, num_iter=25, pop_exit=False, shock=False, make_t=False
-    )
-p3
 
+p3 = trial(1, 1, display=True, num_iter=25, pop_exit=False, shock=False, make_t=False)
+p3
 
 
 class VectorField(object):
@@ -236,6 +238,8 @@ class VectorField(object):
                 line_color="#FFFFFF",
             )
         )
+
+
 def make_matrix(n, X_max=550, Y_max=550, X_min=0, Y_min=0):
     xdiff = X_max - X_min
     ydiff = Y_max - Y_min
@@ -257,7 +261,7 @@ def make_matrix(n, X_max=550, Y_max=550, X_min=0, Y_min=0):
     vect_colors = []
     for i in range(len(xx[0])):
         for j in range(len(yy)):
-            rez = trial(xx[0][i], yy[j][0], num_iter = 3, pop_exit = False )
+            rez = trial(xx[0][i], yy[j][0], num_iter=3, pop_exit=False)
             x_noughts.append(rez["X"][0])
             y_noughts.append(rez["Y"][0])
             dx_noughts.append(rez["dX"][0])
@@ -289,21 +293,21 @@ def make_matrix(n, X_max=550, Y_max=550, X_min=0, Y_min=0):
     df.loc[:, "color"] = df.loc[:, "color"].apply(transform)
     print(df)
     return df
-fig =  VectorField(
-        "problem7",
-        proportion=.75,
-        rescale=True,
-        size = 30,
-        n=1000,
-        X_max=1005,
-        Y_max=1005,
-        title="Problem 7: A Revised Model",
-        X_min=0,
-        Y_min=0,
-    )
-p = trial(
-        600, 50, display=True, num_iter=18, pop_exit=False, shock=True, make_t=False
-    )
-#fig.add_path(p)
+
+
+fig = VectorField(
+    "problem7",
+    proportion=0.75,
+    rescale=True,
+    size=30,
+    n=1000,
+    X_max=1005,
+    Y_max=1005,
+    title="Problem 7: A Revised Model",
+    X_min=0,
+    Y_min=0,
+)
+p = trial(600, 50, display=True, num_iter=18, pop_exit=False, shock=True, make_t=False)
+# fig.add_path(p)
 show(fig.p)
 export_png(fig.p, filename="papers/charts/problem7_chart.png")
