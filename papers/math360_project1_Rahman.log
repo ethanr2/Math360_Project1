@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2020.8.24)  3 OCT 2020 19:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2020.8.24)  3 OCT 2020 19:47
 entering extended mode
 **./math360_project1_Rahman.tex
 (math360_project1_Rahman.tex
@@ -540,8 +540,8 @@ File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 
 ]
 
-pdfTeX warning: pdflatex.exe (file ./problems.pdf): PDF inclusion: found PDF ve
-rsion <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file ./problems.pdf): PDF inclusion: found PDF versio
+n <1.7>, but at most version <1.5> allowed
 <problems.pdf, id=74, 597.23125pt x 845.1575pt>
 File: problems.pdf Graphic file (type pdf)
 <use problems.pdf>
@@ -549,20 +549,20 @@ Package pdftex.def Info: problems.pdf  used on input line 40.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
 
-pdfTeX warning: pdflatex.exe (file ./problems.pdf): PDF inclusion: found PDF ve
-rsion <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file ./problems.pdf): PDF inclusion: found PDF versio
+n <1.7>, but at most version <1.5> allowed
 File: problems.pdf Graphic file (type pdf)
 <use problems.pdf>
 Package pdftex.def Info: problems.pdf  used on input line 40.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
 
-pdfTeX warning: pdflatex.exe (file ./problems.pdf): PDF inclusion: found PDF ve
-rsion <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file ./problems.pdf): PDF inclusion: found PDF versio
+n <1.7>, but at most version <1.5> allowed
 
 
-pdfTeX warning: pdflatex.exe (file ./problems.pdf): PDF inclusion: found PDF ve
-rsion <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file ./problems.pdf): PDF inclusion: found PDF versio
+n <1.7>, but at most version <1.5> allowed
 <problems.pdf, id=77, page=1, 597.23125pt x 845.1575pt>
 File: problems.pdf Graphic file (type pdf)
 <use problems.pdf, page 1>
