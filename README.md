@@ -1,7 +1,7 @@
 # Math360_Project1
 Midterm assignment for my class Math 360: Model Building in Applied Math.
 
-The papers directory includes the final draft itself -` math360_project1_Rahman.pdf` - along with the images that show up in the final draft, tables, and the LaTeX file that produces the pdf. 
+The `papers` directory includes the final draft itself -` math360_project1_Rahman.pdf` - along with the images that show up in the final draft, tables, and the LaTeX file that produces the pdf. 
 
 `master.bat` will reproduce the entire process of generating the document exactly the way I did it. The main purpose of this file is to aid in replication and help potential team members understand the workflow of the project. 
 
