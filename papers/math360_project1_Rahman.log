@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2020.8.24)  1 OCT 2020 23:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2020.8.24)  3 OCT 2020 19:09
 entering extended mode
 **./math360_project1_Rahman.tex
 (math360_project1_Rahman.tex
@@ -379,54 +379,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
 ]
 
-pdfTeX warning: pdflatex.exe (file ./project1.pdf): PDF inclusion: found PDF ve
-rsion <1.7>, but at most version <1.5> allowed
-<project1.pdf, id=16, 597.23125pt x 845.1575pt>
-File: project1.pdf Graphic file (type pdf)
-<use project1.pdf>
-Package pdftex.def Info: project1.pdf  used on input line 37.
+pdfTeX warning: pdflatex (file ./problems.pdf): PDF inclusion: found PDF versio
+n <1.7>, but at most version <1.5> allowed
+<problems.pdf, id=15, 597.23125pt x 845.1575pt>
+File: problems.pdf Graphic file (type pdf)
+<use problems.pdf>
+Package pdftex.def Info: problems.pdf  used on input line 37.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
 
-pdfTeX warning: pdflatex.exe (file ./project1.pdf): PDF inclusion: found PDF ve
-rsion <1.7>, but at most version <1.5> allowed
-File: project1.pdf Graphic file (type pdf)
-<use project1.pdf>
-Package pdftex.def Info: project1.pdf  used on input line 37.
+pdfTeX warning: pdflatex (file ./problems.pdf): PDF inclusion: found PDF versio
+n <1.7>, but at most version <1.5> allowed
+File: problems.pdf Graphic file (type pdf)
+<use problems.pdf>
+Package pdftex.def Info: problems.pdf  used on input line 37.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
 
-pdfTeX warning: pdflatex.exe (file ./project1.pdf): PDF inclusion: found PDF ve
-rsion <1.7>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex (file ./problems.pdf): PDF inclusion: found PDF versio
+n <1.7>, but at most version <1.5> allowed
 
 
-pdfTeX warning: pdflatex.exe (file ./project1.pdf): PDF inclusion: found PDF ve
-rsion <1.7>, but at most version <1.5> allowed
-<project1.pdf, id=19, page=1, 597.23125pt x 845.1575pt>
-File: project1.pdf Graphic file (type pdf)
-<use project1.pdf, page 1>
-Package pdftex.def Info: project1.pdf , page1 used on input line 37.
+pdfTeX warning: pdflatex (file ./problems.pdf): PDF inclusion: found PDF versio
+n <1.7>, but at most version <1.5> allowed
+<problems.pdf, id=18, page=1, 597.23125pt x 845.1575pt>
+File: problems.pdf Graphic file (type pdf)
+<use problems.pdf, page 1>
+Package pdftex.def Info: problems.pdf , page1 used on input line 37.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
-File: project1.pdf Graphic file (type pdf)
-<use project1.pdf, page 1>
-Package pdftex.def Info: project1.pdf , page1 used on input line 37.
+File: problems.pdf Graphic file (type pdf)
+<use problems.pdf, page 1>
+Package pdftex.def Info: problems.pdf , page1 used on input line 37.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
 [3
 
 ]
-File: project1.pdf Graphic file (type pdf)
-<use project1.pdf, page 1>
-Package pdftex.def Info: project1.pdf , page1 used on input line 37.
+File: problems.pdf Graphic file (type pdf)
+<use problems.pdf, page 1>
+Package pdftex.def Info: problems.pdf , page1 used on input line 37.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
-File: project1.pdf Graphic file (type pdf)
-<use project1.pdf, page 1>
-Package pdftex.def Info: project1.pdf , page1 used on input line 37.
+File: problems.pdf Graphic file (type pdf)
+<use problems.pdf, page 1>
+Package pdftex.def Info: problems.pdf , page1 used on input line 37.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
-File: project1.pdf Graphic file (type pdf)
-<use project1.pdf, page 1>
-Package pdftex.def Info: project1.pdf , page1 used on input line 37.
+File: problems.pdf Graphic file (type pdf)
+<use problems.pdf, page 1>
+Package pdftex.def Info: problems.pdf , page1 used on input line 37.
 (pdftex.def)             Requested size: 597.25711pt x 845.19412pt.
- [4 <./project1.pdf>]
+ [4 <./problems.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 65--66
 
  []
@@ -436,51 +436,115 @@ Underfull \hbox (badness 10000) in paragraph at lines 67--68
 
  []
 
+
+LaTeX Warning: Reference `tab:p2' on page 5 undefined on input line 91.
+
 (problem2_tab.tex) [5
 
 ]
+
+LaTeX Warning: Reference `params1' on page 6 undefined on input line 100.
+
+
+LaTeX Warning: Reference `fig:p3' on page 6 undefined on input line 100.
+
+
+LaTeX Warning: Reference `tab:p3' on page 6 undefined on input line 101.
+
+
+LaTeX Warning: Reference `tab:p2' on page 6 undefined on input line 102.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 104--106
 
  []
 
-<charts/problem3_chart.png, id=39, 803.0pt x 803.0pt>
+<charts/problem3_chart.png, id=38, 803.0pt x 803.0pt>
 File: charts/problem3_chart.png Graphic file (type png)
 <use charts/problem3_chart.png>
 Package pdftex.def Info: charts/problem3_chart.png  used on input line 108.
 (pdftex.def)             Requested size: 401.49902pt x 401.49902pt.
-(problem3_tab.tex) [6] [7] [8 <./charts/problem3_chart.png>]
+(problem3_tab.tex)
+
+LaTeX Warning: Reference `params1' on page 6 undefined on input line 119.
+
+
+LaTeX Warning: Reference `params1' on page 6 undefined on input line 119.
+
+
+LaTeX Warning: Reference `fig:p3' on page 6 undefined on input line 122.
+
+[6] [7] [8 <./charts/problem3_chart.png>]
+
+LaTeX Warning: Reference `fig:p4' on page 9 undefined on input line 126.
+
+
+LaTeX Warning: Reference `tab:p3' on page 9 undefined on input line 126.
+
 <charts/problem4_chart.png, id=53, 803.0pt x 803.0pt>
 File: charts/problem4_chart.png Graphic file (type png)
 <use charts/problem4_chart.png>
 Package pdftex.def Info: charts/problem4_chart.png  used on input line 128.
 (pdftex.def)             Requested size: 401.49902pt x 401.49902pt.
- (problem4_tab.tex) [9] [10 <./charts/problem4_chart.png>] [11]
-<charts/problem5_chart.png, id=64, 803.0pt x 803.0pt>
+
+LaTeX Warning: Reference `fig:p4' on page 9 undefined on input line 132.
+
+(problem4_tab.tex)
+
+LaTeX Warning: Reference `params1' on page 9 undefined on input line 137.
+
+
+LaTeX Warning: Reference `params1' on page 9 undefined on input line 137.
+
+[9] [10 <./charts/problem4_chart.png>]
+
+LaTeX Warning: Reference `fig:p3' on page 11 undefined on input line 151.
+
+<charts/problem5_chart.png, id=61, 803.0pt x 803.0pt>
 File: charts/problem5_chart.png Graphic file (type png)
 <use charts/problem5_chart.png>
 Package pdftex.def Info: charts/problem5_chart.png  used on input line 153.
 (pdftex.def)             Requested size: 401.49902pt x 401.49902pt.
+
+LaTeX Warning: Reference `fig:p3' on page 11 undefined on input line 154.
+
+
+LaTeX Warning: Reference `fig:p3' on page 11 undefined on input line 154.
+
+
+LaTeX Warning: Reference `fig:p5' on page 11 undefined on input line 157.
+
+[11]
+
+LaTeX Warning: Reference `fig:p6' on page 12 undefined on input line 160.
+
 <charts/problem6_chart.png, id=65, 803.0pt x 803.0pt>
 File: charts/problem6_chart.png Graphic file (type png)
 <use charts/problem6_chart.png>
 Package pdftex.def Info: charts/problem6_chart.png  used on input line 162.
 (pdftex.def)             Requested size: 401.49902pt x 401.49902pt.
-
+[12 <./charts/problem5_chart.png>] [13 <./charts/problem6_chart.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
-[12] [13 <./charts/problem5_chart.png>] [14 <./charts/problem6_chart.png>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
+
+
+LaTeX Warning: Reference `params2' on page 14 undefined on input line 180.
+
+
+LaTeX Warning: Reference `fig:p7' on page 14 undefined on input line 180.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 179--181
 
  []
 
-<charts/problem7_chart.png, id=78, 803.0pt x 803.0pt>
+<charts/problem7_chart.png, id=75, 803.0pt x 803.0pt>
 File: charts/problem7_chart.png Graphic file (type png)
 <use charts/problem7_chart.png>
 Package pdftex.def Info: charts/problem7_chart.png  used on input line 203.
@@ -490,32 +554,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 182--207
 
  []
 
-[15] [16] [17 <./charts/problem7_chart.png>] (math360_project1_Rahman.aux) ) 
+[14] [15] [16 <./charts/problem7_chart.png>] (math360_project1_Rahman.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
  5199 strings out of 492945
  73400 string characters out of 3135513
- 166877 words of memory out of 3000000
+ 166791 words of memory out of 3000000
  8982 multiletter control sequences out of 15000+200000
  17739 words of font info for 52 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,18n,43p,787b,440s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C
-:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1
-200.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dp
-i600\ecbx1728.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jkna
-ppen/ec/dpi600\ecrm1200.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/l
-jfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\
-fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\ethan\AppData\Local\M
-iKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\ethan\AppDa
-ta\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX 2.9/
-fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb>
-Output written on math360_project1_Rahman.pdf (18 pages, 1526795 bytes).
+ <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\
+ecti1200.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/
+ec/dpi600\ecbx1200.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour
+/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\ethan\AppData\Local\MiKTeX\2.9\fonts
+/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\ethan\AppData\Local\MiKTeX
+\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\ethan\AppData\Lo
+cal\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\ethan\
+AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2074.pk><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb>
+Output written on math360_project1_Rahman.pdf (17 pages, 1520963 bytes).
 PDF statistics:
- 295 PDF objects out of 1000 (max. 8388607)
+ 276 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

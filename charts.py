@@ -4,8 +4,6 @@ from datetime import date
 from datetime import datetime as dt
 from time import time
 
-# import warnings
-
 import numpy as np
 import pandas as pd
 from scipy import stats
@@ -472,7 +470,7 @@ def main(redo_p6=False):
     problem_3()
     problem_4()
     problem_5()
-    # Problem 6 is computationally intense! don't run it routinely as part of tests.
+    # Problem 6 is computationally intensive! Don't run it routinely as part of tests.
     if redo_p6:
         problem_6()
 
